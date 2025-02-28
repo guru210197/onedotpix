@@ -190,4 +190,241 @@ body {
 }
 .why-choose-us .card h5 {
   font-weight: 600;
+}
+
+.third .thiird {
+  margin-bottom: 45px;
+  position: relative;
+  letter-spacing: 0.64px;
+  color: #fff;
+  line-height: 25px;
+  font-weight: 700;
+  font-size: 28px;
+  text-transform: uppercase;
+  margin: 3% 0% 0 0;
+}
+.third .thiird:before {
+  background: #ff0000;
+  content: "";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  bottom: -15px;
+  width: 50px;
+}
+.third .container {
+  width: 100%;
+  margin: 50px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.third .card {
+  position: relative;
+  margin: 20px;
+  width: 250px;
+  height: 350px;
+  background: #fff;
+  transform-style: preserve-3d;
+  transform: perspective(450px);
+  transition: 1.5s;
+  box-shadow: inset 100px 0 50px rgba(0, 0, 0, 0.5);
+}
+.third .card:hover {
+  z-index: 11;
+  transform: perspective(2000px);
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
+}
+.third .card .img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  transform-origin: left;
+  z-index: 1;
+  transition: 1s;
+}
+.third .card .img-container img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.third .card:hover .img-container {
+  transform: rotateY(-155deg);
+}
+.third .card .card-details {
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  padding: 20px;
+  color: #000;
+}
+.third .card .card-details h2 {
+  margin: 0;
+  padding: 0.5em 0;
+  text-transform: uppercase;
+  font-size: 1.7em;
+  color: #ff0000;
+}
+.third .card .card-details p {
+  margin: 0;
+  padding: 0;
+  line-height: 25px;
+  font-size: 1.1em;
+  color: #000;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* 09.parrelex effect
+/*-----------------------------------------------------------------------------------*/
+.parallax {
+  /* The image used */
+  /* Set a specific height */
+  min-height: 500px;
+  background: url("../../assets/aerial_photos/DJI_0002.jpg");
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.parfont {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.parfont h2 {
+  color: #fb0;
+  font-size: 2em;
+  margin-bottom: 5%;
+  font-weight: 600;
+}
+
+.parfont p {
+  font-size: 1.1em;
+  color: #FFF;
+  text-shadow: 0 8px 18px rgba(0, 0, 0, 0.25), 0 10px 15px rgba(0, 0, 0, 0.22);
+  background-color: rgba(37, 37, 37, 0);
+  border-radius: 8px;
+}
+
+/* Gallery Container */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3%;
+}
+
+/* Image Wrapper */
+.ins-gallery {
+  --s: 350px; /* Fixed size */
+  position: relative;
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: -15px 18px 38px rgba(0, 0, 0, 0.25), 12px 15px 15px rgba(0, 0, 0, 0.22);
+}
+
+/* Images */
+.ins-gallery > img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s ease-in-out, -webkit-clip-path 0.5s ease-in-out;
+  transition: clip-path 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: clip-path 0.5s ease-in-out, transform 0.5s ease-in-out, -webkit-clip-path 0.5s ease-in-out; /* Smooth effect */
+}
+
+/* Default View: 50/50 Split */
+.before {
+  -webkit-clip-path: inset(0 50% 0 0);
+          clip-path: inset(0 50% 0 0); /* Show left half */
+  z-index: 2;
+}
+
+.after {
+  -webkit-clip-path: inset(0 0 0 50%);
+          clip-path: inset(0 0 0 50%); /* Show right half */
+  z-index: 1;
+}
+
+/* Hover Left Side */
+.ins-gallery:hover .before {
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0); /* Expand before image smoothly */
+  z-index: 3;
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.ins-gallery:hover .after {
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
+  z-index: 1;
+  transform: scale(1);
+}
+
+/* Left Side Hover Effect */
+.ins-gallery:hover:has(.before:hover) .before {
+  z-index: 3;
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
+  transform: scale(1.1); /* Smooth zoom */
+}
+
+.ins-gallery:hover:has(.before:hover) .after {
+  z-index: 1;
+  -webkit-clip-path: inset(0 100% 0 0);
+          clip-path: inset(0 100% 0 0); /* Hide after image */
+  transform: scale(0.95);
+}
+
+/* Right Side Hover Effect */
+.ins-gallery:hover:has(.after:hover) .after {
+  z-index: 3;
+  -webkit-clip-path: inset(0 0 0 0);
+          clip-path: inset(0 0 0 0);
+  transform: scale(1.1);
+}
+
+.ins-gallery:hover:has(.after:hover) .before {
+  z-index: 1;
+  -webkit-clip-path: inset(0 100% 0 0);
+          clip-path: inset(0 100% 0 0); /* Hide before image */
+  transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .gallery-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+footer {
+  padding: 0 3%;
+}
+footer .btn-light .fab {
+  color: #222;
+}
+footer .btn-light:hover {
+  background-color: #222;
+}
+footer .btn-light:hover .fab {
+  color: #fff;
 }/*# sourceMappingURL=home.css.map */
