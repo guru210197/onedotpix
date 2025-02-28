@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Open+Sans:wght@300..800&display=swap");
+.text-silver {
+  color: #ddd;
+}
+
+.z-index2 {
+  z-index: 2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.4s ease-in-out;
+  z-index: 1000;
+  transition: 0.5s ease-in-out;
+}
+.navbar .nav-link {
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  transition: 0.4s;
+}
+.navbar .nav-link:hover {
+  background: linear-gradient(90deg, #b87f06, #FFD700, #FFB800);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  transform: scale(1.2);
+}
+.navbar.scrolled {
+  background: linear-gradient(90deg, #121212, #232323);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+.hero-section .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.3098039216);
+}
+.hero-section .left-part {
+  width: 70%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.hero-section .left-part .hero {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.hero-section .left-part .hero .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  opacity: 0;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease-in-out;
+  animation: kenburns 8s ease-in-out infinite alternate;
+  background-size: cover;
+}
+.hero-section .left-part .hero .slide.active {
+  opacity: 1;
+}
+@keyframes kenburns {
+  0% {
+    background-size: 140%;
+  }
+  100% {
+    background-size: 115%;
+  }
+}
+.hero-section .left-part .home-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  z-index: 2;
+  cursor: pointer;
+}
+.hero-section .left-part .home-text h2, .hero-section .left-part .home-text h5, .hero-section .left-part .home-text p {
+  color: white !important;
+  z-index: 3;
+}
+.hero-section .left-part .home-text h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.hero-section .left-part .home-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.hero-section .left-part .arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+.hero-section .left-part .arrows .arrow {
+  background: rgba(238, 127, 1, 0);
+  color: #ffffff;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  margin: 0 20px;
+}
+.hero-section .left-part .arrows .arrow:hover {
+  background: rgba(228, 104, 2, 0.877);
+  font-size: 20px;
+}
+.hero-section .right-part {
+  width: 30%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(190deg, #8B0A0A 0%, #8B0A0A 50%, #400D10 80%, #1A1A1A 100%);
+}
+.hero-section .right-part .circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 8px solid goldenrod;
+  background-image: url(../../assets/zhome/banner1.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  transition: 0.3s;
+}
+.hero-section .right-part .circle:hover {
+  box-shadow: 0 0 25px #ffcc00, 0 0 50px #ff9900;
+}
+
+.why-choose-us {
+  padding: 60px 0;
+  background: #f8f9fa;
+}
+.why-choose-us .card {
+  border: none;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.why-choose-us .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+.why-choose-us .card i {
+  font-size: 40px;
+  color: #ff6f00;
+  margin-bottom: 15px;
+}
+.why-choose-us .card h5 {
+  font-weight: 600;
+}/*# sourceMappingURL=home.css.map */

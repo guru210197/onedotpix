@@ -1,0 +1,243 @@
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Open+Sans:wght@300..800&display=swap');
+
+// Variables
+$primary-color: rgba(228, 104, 2, 0.877);
+$text-light: #ffffff;
+// colors
+
+.text-silver{
+    color: #ddd;
+}
+
+
+// zindex
+
+.z-index2{
+    z-index: 2;
+}
+
+// Global Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+// Navbar
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.4s ease-in-out;
+    z-index: 1000;
+    transition: 0.5s ease-in-out;
+
+    .nav-link {
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.4s;
+
+        &:hover {
+            background: linear-gradient(90deg, #b87f06, #FFD700, #FFB800);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            transform: scale(1.2);
+        }
+    }
+
+    &.scrolled {
+        background: linear-gradient(90deg, #121212, #232323);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+}
+
+// Hero Section
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: relative;
+
+    .layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 1;
+        background-color: #0000004f;
+    }
+
+    .left-part {
+        width: 70%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+
+        // Slideshow
+        .hero {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+
+            .slide {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+             
+                background-position: center;
+                opacity: 0;
+                background-repeat: no-repeat;
+                transition: opacity 1s ease-in-out;
+                animation: kenburns 8s ease-in-out infinite alternate;
+                background-size: cover;
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+
+        // Ken Burns Effect
+        @keyframes kenburns {
+            0% {
+            
+                background-size: 140%;
+              
+            }
+            100% {
+             
+                background-size: 115%;
+                
+            }
+        }
+
+        // Home Text
+        .home-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: $text-light;
+            z-index: 2;
+            cursor: pointer;
+
+            h2, h5, p {
+                color: white !important;
+                z-index: 3;
+            }
+
+            h2 {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        // Navigation Arrows
+        .arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 3;
+
+            .arrow {
+                background: rgba(238, 127, 1, 0);
+                color: $text-light;
+                padding: 5px 12px;
+                cursor: pointer;
+                font-size: 18px;
+                border-radius: 50%;
+                transition:  0.3s ease;
+                margin: 0 20px;
+
+                &:hover {
+                    background: $primary-color;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .right-part {
+        width: 30%;
+        height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: linear-gradient(190deg,
+            #8B0A0A 0%,   // Red starts
+            #8B0A0A 50%,  // Red covers 60%
+            #400D10 80%,  // Maroon covers 20%
+            #1A1A1A 100%  // Black covers 20%
+        );
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 8px solid goldenrod;
+            background-image: url(../../assets/zhome/banner1.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 20px;
+            transition: 0.3s;
+
+            &:hover {
+                box-shadow: 0 0 25px #ffcc00, 0 0 50px #ff9900;
+            }
+        }
+    }
+}
+
+// Second Section
+.why-choose-us {
+    padding: 60px 0;
+    background: #f8f9fa;
+
+    .card {
+        border: none;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        i {
+            font-size: 40px;
+            color: #ff6f00;
+            margin-bottom: 15px;
+        }
+
+        h5 {
+            font-weight: 600;
+        }
+    }
+}
