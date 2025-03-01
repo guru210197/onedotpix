@@ -61,7 +61,7 @@ body {
   background-color: rgba(0, 0, 0, 0.3098039216);
 }
 .hero-section .left-part {
-  width: 70%;
+  width: 100%;
   height: 100vh;
   position: relative;
   overflow: hidden;
@@ -104,18 +104,20 @@ body {
   z-index: 2;
   cursor: pointer;
 }
-.hero-section .left-part .home-text h2, .hero-section .left-part .home-text h5, .hero-section .left-part .home-text p {
+.hero-section .left-part .home-text h5 {
   color: white !important;
-  z-index: 3;
 }
 .hero-section .left-part .home-text h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 2.5rem;
   margin-bottom: 10px;
+  z-index: 3;
+  color: #fff !important;
 }
 .hero-section .left-part .home-text p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  z-index: 3;
 }
 .hero-section .left-part .arrows {
   position: absolute;
@@ -137,33 +139,8 @@ body {
   margin: 0 20px;
 }
 .hero-section .left-part .arrows .arrow:hover {
-  background: rgba(228, 104, 2, 0.877);
+  background: #d88027;
   font-size: 20px;
-}
-.hero-section .right-part {
-  width: 30%;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: linear-gradient(190deg, #8B0A0A 0%, #8B0A0A 50%, #400D10 80%, #1A1A1A 100%);
-}
-.hero-section .right-part .circle {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 8px solid goldenrod;
-  background-image: url(../../assets/zhome/banner1.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 20px;
-  transition: 0.3s;
-}
-.hero-section .right-part .circle:hover {
-  box-shadow: 0 0 25px #ffcc00, 0 0 50px #ff9900;
 }
 
 .why-choose-us {
@@ -241,9 +218,14 @@ body {
   height: 100%;
   border: 1px solid #000;
   box-sizing: border-box;
-  transform-origin: left;
   z-index: 1;
   transition: 1s;
+}
+.third .card1 .img-container {
+  transform-origin: left;
+}
+.third .card2 .img-container {
+  transform-origin: right;
 }
 .third .card .img-container img {
   position: absolute;
@@ -254,8 +236,11 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.third .card:hover .img-container {
+.third .card1:hover .img-container {
   transform: rotateY(-155deg);
+}
+.third .card2:hover .img-container {
+  transform: rotateY(155deg);
 }
 .third .card .card-details {
   position: absolute;
@@ -324,18 +309,20 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 3%;
+  gap: 2%;
 }
 
 /* Image Wrapper */
 .ins-gallery {
-  --s: 350px; /* Fixed size */
+  --s: 500px; /* Fixed size */
   position: relative;
   width: var(--s);
-  height: var(--s);
-  border-radius: 50%;
+  height: 270px;
+  border-radius: 10px;
   overflow: hidden;
   box-shadow: -15px 18px 38px rgba(0, 0, 0, 0.25), 12px 15px 15px rgba(0, 0, 0, 0.22);
+  border: 5px solid #Fb0;
+  background-color: rgba(255, 183, 0, 0.6509803922);
 }
 
 /* Images */
@@ -352,14 +339,14 @@ body {
 
 /* Default View: 50/50 Split */
 .before {
-  -webkit-clip-path: inset(0 50% 0 0);
-          clip-path: inset(0 50% 0 0); /* Show left half */
+  -webkit-clip-path: inset(0 50.5% 0 0);
+          clip-path: inset(0 50.5% 0 0); /* Show left half */
   z-index: 2;
 }
 
 .after {
-  -webkit-clip-path: inset(0 0 0 50%);
-          clip-path: inset(0 0 0 50%); /* Show right half */
+  -webkit-clip-path: inset(0 0 0 50.5%);
+          clip-path: inset(0 0 0 50.5%); /* Show right half */
   z-index: 1;
 }
 
@@ -368,7 +355,7 @@ body {
   -webkit-clip-path: inset(0 0 0 0);
           clip-path: inset(0 0 0 0); /* Expand before image smoothly */
   z-index: 3;
-  transform: scale(1.05); /* Slight zoom effect */
+  transform: scale(1); /* Slight zoom effect */
 }
 
 .ins-gallery:hover .after {
@@ -383,14 +370,14 @@ body {
   z-index: 3;
   -webkit-clip-path: inset(0 0 0 0);
           clip-path: inset(0 0 0 0);
-  transform: scale(1.1); /* Smooth zoom */
+  transform: scale(1); /* Smooth zoom */
 }
 
 .ins-gallery:hover:has(.before:hover) .after {
   z-index: 1;
   -webkit-clip-path: inset(0 100% 0 0);
           clip-path: inset(0 100% 0 0); /* Hide after image */
-  transform: scale(0.95);
+  transform: scale(1);
 }
 
 /* Right Side Hover Effect */
@@ -398,14 +385,14 @@ body {
   z-index: 3;
   -webkit-clip-path: inset(0 0 0 0);
           clip-path: inset(0 0 0 0);
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 .ins-gallery:hover:has(.after:hover) .before {
   z-index: 1;
   -webkit-clip-path: inset(0 100% 0 0);
           clip-path: inset(0 100% 0 0); /* Hide before image */
-  transform: scale(0.95);
+  transform: scale(1);
 }
 
 /* Responsive Design */
