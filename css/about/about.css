@@ -190,7 +190,7 @@ body {
   /* The image used */
   /* Set a specific height */
   min-height: 350px;
-background-image: url("../assets/outdoor_photo/_MG_2628.jpg");
+  background-image: url(../../assets/aerial_photos/DJI_0016.jpg);
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
