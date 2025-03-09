@@ -1,71 +1,144 @@
-// Scroll effect for navbar
-window.addEventListener("scroll", function () {
-    let navbar = document.querySelector(".navbar");
-    navbar.classList.toggle("scrolled", window.scrollY > 50);
-});
+function toggleMenu() {
+    let menuIcon = document.getElementById('menuIcon');
+    let menu = document.getElementById('fullScreenMenu');
+    menuIcon.classList.toggle('open');
+    menu.classList.toggle('active');
+}
 
-// Slideshow functionality
-let slides = document.querySelectorAll(".slide");
-let currentIndex = 0;
-let slideInterval;
+function toggleDropdown(event) {
+    event.preventDefault();
+    let dropdown = document.getElementById('servicesDropdown');
+    dropdown.classList.toggle('active');
+}
 
-// Function to animate text elements inside a slide
-function animateText(slide) {
-    let title = slide.querySelector(".home-text h2");
-    let subtitle = slide.querySelector(".home-text h5");
-    let description = slide.querySelector(".home-text p");
-
-    if (title) gsap.fromTo(title, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 1, ease: "back.out(1.7)", delay: 0.3 });
-    if (subtitle) gsap.fromTo(subtitle, { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 1, ease: "power2.out", delay: 0.8 });
-
-    if (description) {
-        gsap.fromTo(description, { opacity: 0 }, { opacity: 1, duration: 1, ease: "power2.out", delay: 1.2 });
-
-        // Typing effect with span elements
-        let chars = [...description.innerText]; // Convert text to array of characters
-        description.innerHTML = ""; // Clear text before inserting spans
-
-        chars.forEach((char, i) => {
-            let span = document.createElement("span");
-            span.innerText = char;
-            span.style.opacity = "0";
-            description.appendChild(span);
-
-            gsap.to(span, { opacity: 1, duration: 0.05, delay: 1.2 + i * 0.05, ease: "power2.out" });
-        });
+window.addEventListener('scroll', function() {
+    let navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+        navbar.classList.remove('transparent');
+    } else {
+        navbar.classList.remove('scrolled');
+        navbar.classList.add('transparent');
     }
-}
-
-// Function to change slides
-function changeSlide(next = true) {
-    slides[currentIndex].classList.remove("active");
-
-    // Update index safely within range
-    currentIndex = next ? (currentIndex + 1) % slides.length : (currentIndex - 1 + slides.length) % slides.length;
-
-    slides[currentIndex].classList.add("active");
-
-    // Removed Ken Burns effect (no zoom animation)
-    // gsap.fromTo(slides[currentIndex], { scale: 1.1 }, { scale: 1, duration: 6, ease: "power1.inOut" });
-
-    // Animate text inside the new slide
-    animateText(slides[currentIndex]);
-
-    resetSlideInterval();
-}
-
-// Event listeners for navigation arrows
-document.getElementById("next").addEventListener("click", () => changeSlide(true));
-document.getElementById("prev").addEventListener("click", () => changeSlide(false));
-
-// Auto-slide every 6 seconds with reset on manual change
-function resetSlideInterval() {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(() => changeSlide(true), 8000);
-}
-
-// Initial setup on page load
-document.addEventListener("DOMContentLoaded", function () {
-    animateText(slides[0]); // Animate the first slide
-    resetSlideInterval(); // Start auto-sliding
 });
+
+
+// banner
+
+var nextBtn = document.querySelector('.next'),
+    prevBtn = document.querySelector('.prev'),
+    carousel = document.querySelector('.carousel'),
+    list = document.querySelector('.list'), 
+    item = document.querySelectorAll('.item'),
+    runningTime = document.querySelector('.carousel .timeRunning') 
+
+let timeRunning = 3000 
+let timeAutoNext = 7000
+
+nextBtn.onclick = function(){
+    showSlider('next')
+}
+
+prevBtn.onclick = function(){
+    showSlider('prev')
+}
+
+let runTimeOut 
+
+let runNextAuto = setTimeout(() => {
+    nextBtn.click()
+}, timeAutoNext)
+
+
+function resetTimeAnimation() {
+    runningTime.style.animation = 'none'
+    runningTime.offsetHeight /* trigger reflow */
+    runningTime.style.animation = null 
+    runningTime.style.animation = 'runningTime 7s linear 1 forwards'
+}
+
+
+function showSlider(type) {
+    let sliderItemsDom = list.querySelectorAll('.carousel .list .item')
+    if(type === 'next'){
+        list.appendChild(sliderItemsDom[0])
+        carousel.classList.add('next')
+    } else{
+        list.prepend(sliderItemsDom[sliderItemsDom.length - 1])
+        carousel.classList.add('prev')
+    }
+
+    clearTimeout(runTimeOut)
+
+    runTimeOut = setTimeout( () => {
+        carousel.classList.remove('next')
+        carousel.classList.remove('prev')
+    }, timeRunning)
+
+
+    clearTimeout(runNextAuto)
+    runNextAuto = setTimeout(() => {
+        nextBtn.click()
+    }, timeAutoNext)
+
+    resetTimeAnimation() // Reset the running time animation
+}
+
+// Start the initial animation 
+resetTimeAnimation()
+
+// about slider
+// ============
+
+var swiper = new Swiper(".mySwiper", {
+    pagination: {
+        el: ".swiper-pagination",
+    },
+    loop: true,
+    autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+},
+});
+
+// swiper 2 (service)
+//  =================
+
+var swiper1 = new Swiper(".mySwiper1", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    autoplay: {
+      delay: 2500,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+      },
+    },
+  });
+
+//   client slider
+
+var clientSwiper = new Swiper(".client-slider", {
+    slidesPerView: 2,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: { slidesPerView: 3 },
+      768: { slidesPerView: 4 },
+      1024: { slidesPerView: 4 },
+    },
+  });
+
+
+//  gallery
+

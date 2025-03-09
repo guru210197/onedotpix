@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Dot Pix</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+  
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!--  navbar -->
+
+
+    <nav class="navbar navbar-light fixed-top transparent" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" onclick="toggleMenu()" id="menuButton">
+                <div class="custom-toggler" id="menuIcon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <div class="full-screen-menu" id="fullScreenMenu">
+        <ul class="list-unstyled">
+            <li><a href="index.html" class="text-uppercase">Home</a></li>
+            <li><a href="about.html" class="text-uppercase">About us</a></li>
+            <li>
+                <a href="#" onclick="toggleDropdown(event)" class="text-uppercase">Our Services &#9662;</a>
+                <ul class="dropdown-menu" id="servicesDropdown">
+                  <li><a class="dropdown-item" href="#">HDR Blending</a></li>
+                  <li><a class="dropdown-item" href="#">Outdoor Photo</a></li>
+                  <li><a class="dropdown-item" href="#">Clip Path</a></li>
+                  <li><a class="dropdown-item" href="#">Image Retouching</a></li>
+                  <li><a class="dropdown-item" href="#">Floor Plan</a></li>
+                  <li><a class="dropdown-item" href="#">Landscapping</a></li>
+                  <li><a class="dropdown-item" href="#">Portrait</a></li>
+                  <li><a class="dropdown-item" href="#">Twilight</a></li>
+                  <li><a class="dropdown-item" href="#">Virtual Spacing</a></li>
+              </ul>
+            </li>
+            <li><a href="gallery.html" class="text-uppercase">My Gallery</a></li>
+            <li><a href="contact.html" class="text-uppercase">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- contact banner -->
+
+    <div class="c-banner">
+  
+          <h1>Contact us</h1>
+    </div>
+
+    <!-- local adress -->
+
+    
+
+ <div class="container address my-5 " >
+    <div class="row  d-flex justify-content-between">
+        <div class="col-12 col-md-4 pt-4 pb-2 ps-2 ps-md-4  box">
+        <div class="d-flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="#c88c4c" d="M12 11.5A2.5 2.5 0 0 1 9.5 9A2.5 2.5 0 0 1 12 6.5A2.5 2.5 0 0 1 14.5 9a2.5 2.5 0 0 1-2.5 2.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7"/></svg>
+            <h2 class="ms-2">VISIT US</h2>
+          </div>
+            <p class="my-2">ONE DOT PIX INFOTECH</p>
+            <address class="fw-bold">1<sup>st</sup> Floor,
+            2<sup>nd</sup> street , 
+            <br> 12345, Kulamangalam</address>
+        </div>
+        <div class="col-12 col-md-4 pt-4 pb-2 ps-2 ps-md-4   box">
+          <div class="d-flex ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="#c88c4c" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zM20 8l-7.475 4.675q-.125.075-.262.113t-.263.037t-.262-.037t-.263-.113L4 8v10h16zm-8 3l8-5H4zM4 8v.25v-1.475v.025V6v.8v-.012V8.25zv10z"/></svg>
+            <h2 class="ms-2">Mail</h2>
+            </div>
+            <p class="my-2">Send us an email and we will make sure it gets to the right person.</p>
+            <h5>onedotpix@outlook.com</h5>
+        </div>
+        <div class="col-12 col-md-4 pt-4 pb-2 ps-2 ps-md-4    box">
+          <div class="d-flex">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="#c88c4c" d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3"/></svg>
+            <h2 class="ms-2">Phone</h2>
+            </div>
+            <p class="my-2">Our customer experience team is ready to answer any questions.</p>
+            <h5>1234567890</h5>
+        </div>
+    </div>
+</div>
+
+    <!-- contact form -->
+
+    <div class="container">
+    <div class="row p-0 p-md-5">
+
+        <div class="col-12 col-md-4 d-flex justify-content-center align-items-center ">
+       <dotlottie-player src="https://lottie.host/a8328fe9-3f57-402a-9d13-a4a5266f4747/tKq9QAXumv.lottie" background="transparent" speed="1" style="width: 400px; height: 400px" loop autoplay></dotlottie-player>
+
+        </div>
+        <div class="col-12 col-md-8 px-2 px-md-5">
+         
+            <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="inputEmail4" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPassword4" class="form-label">Phone</label>
+                  <input type="tel" class="form-control" id="inputPassword4">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                </div>
+             
+                <div class="col-md-4">
+                  <label for="inputCity" class="form-label">City</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputState" class="form-label">Services</label>
+                  <select id="inputState" class="form-select">
+                    <option>HDR Blending</option>
+                    <option>Outdoor Photo</option>
+                    <option >Photo Editing</option>
+                    <option>Image Retouching</option>
+                    <option >Color Correction</option>
+                    <option>Real Estate Editing</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label for="inputZip" class="form-label">Date</label>
+                  <input type="date" class="form-control" id="date">
+                </div>
+                <div class="col-12">
+               
+                </div>
+               
+                <div class="col-12">
+                  <label for="inputAddress2" class="form-label">Message</label>
+                  <textarea class="form-control" rows="4" cols="50" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="button ms-2">Submit</button>
+                </div>
+              </form>
+    
+        </div>
+    
+    </div>
+</div>
+
+<iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15718.383939787975!2d78.11199586113752!3d9.967532376083826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c60ff89693a9%3A0x46d06a47d2b63aab!2sKulamangalam%2C%20Tamil%20Nadu%20625017!5e0!3m2!1sen!2sin!4v1741449087565!5m2!1sen!2sin" width="100%"  height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+<!-- footer -->
+
+<footer class="bg-dark">
+    <div class="container-fluid ">
+      <footer class="text-white text-center text-lg-start ">
+      <!-- Grid container -->
+      <div class="container p-4">
+      <!--Grid row-->
+      <div class="row mt-4">
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+      <h5 class="text-uppercase mb-4">About company</h5>
+      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+      voluptatum deleniti atque corrupti.</p>
+      <p>Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quasmolestias.</p>
+   
+      </div>
+      <!--Grid column-->
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+      <h5 class="text-uppercase mb-4 pb-1">Know something</h5>
+      <div class="form-outline form-white mb-4">
+      <input type="text" id="formControlLg" class="form-control form-control-lg" placeholder="send mail" />
+      <label class="form-label button btn btn-warning text-light my-2" for="formControlLg">Send</label>
+      </div>
+      <div class="mt-4">
+        <!-- Facebook -->
+        <a type="button" class="btn btn-floating btn-light  btn-lg"><i class="fab fa-facebook-f "></i></a>
+        <!-- linkedin -->
+        <a type="button" class="btn btn-floating btn-light  btn-lg"><i class="fab fa-linkedin "></i></a>
+        <!-- Twitter -->
+        <a type="button" class="btn btn-floating btn-light  btn-lg"><i class="fab fa-twitter "></i></a>
+        <!-- instagram -->
+        <a type="button" class="btn btn-floating btn-light   btn-lg"><i class="fab fa-instagram "></i></a>
+        </div>
+  
+      </div>
+      <!--Grid column-->
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4 mb-md-0 ">
+      <h5 class="text-uppercase mb-4">Opening hours</h5>
+      <table class="table text-center text-white">
+      <tbody class="fw-normal ">
+      <tr >
+      <td class="bg-dark text-light">Mon-Fri:</td>
+      <td class="bg-dark text-light">10am - 7pm</td>
+      </tr>
+      <tr>
+      <td class="bg-dark text-light"> Sat:</td>
+      <td class="bg-dark text-light">10am - 5pm</td>
+      </tr>
+      <tr>
+      <td class="bg-dark text-light">Sunday:</td>
+      <td class="bg-dark text-light">---</td>
+      </tr>
+      </tbody>
+      </table>
+      <ul class="fa-ul" >
+        <li class=" ">
+        <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 9876543210</span>
+        </li>
+        </ul>
+      </div>
+     
+      <!--Grid column-->
+      </div>
+      <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+      <!-- Copyright -->
+      <div class="text-center container-fluid  py-4">
+      © 2025 Copyright:
+      <a class="text-white text-decoration-none text-uppercase" href="">onedotpix</a>
+      </div>
+      <!-- Copyright -->
+      </footer>
+    </div>
+    <!-- End of .container -->
+  </footer>
+
+
+
+
+
+    <!-- js -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
